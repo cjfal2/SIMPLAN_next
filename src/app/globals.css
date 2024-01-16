@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
+/* 앱 기반 화면 설정을 위한 초기 세팅*/
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  height: 100vh;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  width: device-width;
+  min-width: 375px;
+  max-width: 700px;
+  
+  display: flex;
+  margin: 0 auto;
+  
+  text-align: center;
+  justify-content: center;
+  
+  background-color: #FEF1E8;
 }
