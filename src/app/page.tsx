@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
     <>
-      <div className="border-2">
+      <div className="">
         안녕하세요
       </div>
     </>
