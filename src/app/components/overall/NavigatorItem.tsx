@@ -1,18 +1,17 @@
-import { navigatorDataType } from "@/app/model/types";
+import { NavigatorDataType } from "@/app/model/types";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
 
 // 프롭스에대한 데이터
 type Props = {
-  info: navigatorDataType;
+  info: NavigatorDataType;
   pathName: string;
 };
 
 export default function NavigatorItem({ info, pathName }: Props) {
   return (
     <Link
-      href={`/${info.eng !== "Today" ? info.eng : ''}`}
+      href={`/${info.eng !== "Today" ? info.eng : ""}`}
       className={`
       h-full w-1/4 flex flex-col justify-center items-center
       ${

@@ -1,8 +1,14 @@
-export default function HomePage() {
+import PositiveSentence from "./components/today/PositiveSentence";
+import ToDoList from "./components/today/ToDoList";
+import TodayTimeTable from "./components/today/TodayTimeTable";
+
+export default async function HomePage() {
   return (
     <>
-      <div className="">
-        안녕하세요
+      <div className="px-6">
+        <PositiveSentence/>
+        <ToDoList/>
+        <TodayTimeTable/>
       </div>
     </>
   );

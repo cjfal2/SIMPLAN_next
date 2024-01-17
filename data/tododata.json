@@ -1,0 +1,106 @@
+{
+  "2024-1-17": [
+    {
+      "id": 1,
+      "name": "프로젝트 설계",
+      "state": "done",
+      "planStartTime": "07:00",
+      "planEndTime": "08:00",
+      "realStartTime": "07:00",
+      "realEndTime": "08:30",
+      "category": "직접성과"
+    },
+    {
+      "id": 2,
+      "name": "피그마 디자인 2개",
+      "state": "yet",
+      "planStartTime": "10:00",
+      "planEndTime": "11:00",
+      "realStartTime": "00:00",
+      "realEndTime": "00:00",
+      "category": "간접성과"
+    },
+    {
+      "id": 3,
+      "name": "영어공부하기",
+      "state": "yet",
+      "planStartTime": "09:00",
+      "planEndTime": "10:00",
+      "realStartTime": "00:00",
+      "realEndTime": "00:00",
+      "category": "자기계발"
+    },
+    {
+      "id": 4,
+      "name": "친구 만나기",
+      "state": "delay",
+      "planStartTime": "17:00",
+      "planEndTime": "19:00",
+      "realStartTime": "00:00",
+      "realEndTime": "00:00",
+      "category": "네트워킹"
+    },
+    {
+      "id": 5,
+      "name": "핸드폰고치기",
+      "state": "cancel",
+      "planStartTime": "15:00",
+      "planEndTime": "16:00",
+      "realStartTime": "00:00",
+      "realEndTime": "00:00",
+      "category": "개인활동"
+    }
+  ],
+  "2024-1-18": [
+    {
+      "id": 1,
+      "name": "프로젝트 설계",
+      "state": "done",
+      "planStartTime": "07:00",
+      "planEndTime": "08:00",
+      "realStartTime": "07:00",
+      "realEndTime": "08:30",
+      "category": "직접성과"
+    },
+    {
+      "id": 2,
+      "name": "피그마 디자인 2개",
+      "state": "yet",
+      "planStartTime": "10:00",
+      "planEndTime": "11:00",
+      "realStartTime": "00:00",
+      "realEndTime": "00:00",
+      "category": "직접성과"
+    },
+    {
+      "id": 3,
+      "name": "영어공부하기",
+      "state": "yet",
+      "planStartTime": "09:00",
+      "planEndTime": "10:00",
+      "realStartTime": "00:00",
+      "realEndTime": "00:00",
+      "category": "자기계발"
+    },
+    {
+      "id": 4,
+      "name": "친구 만나기",
+      "state": "delay",
+      "planStartTime": "17:00",
+      "planEndTime": "19:00",
+      "realStartTime": "00:00",
+      "realEndTime": "00:00",
+      "category": "네트워킹"
+    },
+    {
+      "id": 5,
+      "name": "핸드폰고치기",
+      "state": "cancel",
+      "planStartTime": "15:00",
+      "planEndTime": "16:00",
+      "realStartTime": "00:00",
+      "realEndTime": "00:00",
+      "category": "개인활동"
+    }
+  ]
+}
