@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import NavigatorItem from "./NavigatorItem";
 import { navigatorDataType } from "@/app/model/types";
+import { usePathname } from "next/navigation";
 
 // 네비게이션 아이템의 정보
 const navigatorData: navigatorDataType[] = [
@@ -13,8 +14,12 @@ const navigatorData: navigatorDataType[] = [
 ];
 
 export default function Navigator() {
-  // 클릭된 버튼 구분과 라우팅을 위한 변수 선언
-  const [clickedButton, setClickedButton] = useState(navigatorData[0].eng);
+  // Nextjs의 기본 기능인 usePathname을 활용해서 useState를 없애고 파일 경로 이름을 사용하는 식으로 변경
+  let pathName = usePathname(); // use client 사용해야함
+  if (pathName === "/") {
+    pathName = "/Today"
+  }
+  console.log(pathName)
   return (
     // 모바일 하단 네비게이션 규칙에 따라 48px로 고정
     <div className="h-[48px] flex justify-between items-center bg-[#FDE7D7] text-[#ABABAB]">
@@ -23,8 +28,8 @@ export default function Navigator() {
         <NavigatorItem
           key={data.eng}
           info={data}
-          clickedButton={clickedButton}
-          onClick={setClickedButton}
+          pathName={pathName}
+          // onClick={setClickedButton}
         />
       ))}
     </div>
