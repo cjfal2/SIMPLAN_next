@@ -3,14 +3,13 @@
 import React from "react";
 
 type Props = {
-  name: string;
+  title: string;
   color: string;
 };
 
-export default function ToDoName({ name, color }: Props) {
-  // TODO: 컬러 입히기 제대로 구현해야함
-  console.log(name, color)
+export default function ToDoName({ title, color }: Props) {
+  // 컬러 입히기 제대로 구현 => 아예 처음부터 모든 tailwind 코드 작성
   return (
-    <div className={`text-${color} text-sm font-semibold`}>{name}</div>
+    <div className={`${color} text-sm font-semibold`}>{title}</div>
   );
 }

@@ -5,8 +5,9 @@ export type NavigatorDataType = {
 
 export type ToDoItemType = {
   id: number;
-  name: string;
-  state: string;
+  title: string;
+  content: string;
+  status: string;
   planStartTime: Date;
   planEndTime: Date;
   realStartTime: Date;

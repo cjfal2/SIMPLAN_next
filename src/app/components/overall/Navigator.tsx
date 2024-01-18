@@ -14,7 +14,7 @@ const navigatorData: NavigatorDataType[] = [
 ];
 
 export default function Navigator() {
-  // Nextjs의 기본 기능인 usePathname을 활용해서 useState를 없애고 파일 경로 이름을 사용하는 식으로 변경
+  // Nextjs의 기본 기능인 usePathname을 활용해서 usestatus를 없애고 파일 경로 이름을 사용하는 식으로 변경
   let pathName: string = usePathname(); // use client 사용해야함
   if (pathName === "/") {
     pathName = "/Today";

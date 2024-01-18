@@ -12,10 +12,9 @@ export async function getTodayToDo(): Promise<DailyToDoType> {
   const year: number = today.getFullYear();
   const month: number = today.getMonth() + 1;
   const day: number = today.getDate();
-  
+
   // getAllToDo 함수의 실행이 완료될 때까지 기다림
   const allToDoData = await getAllToDo();
-  // console.log(`${year}-${month}-${day}`);
-  // console.log(allToDoData);
+
   return allToDoData[`${year}-${month}-${day}`];
 }
