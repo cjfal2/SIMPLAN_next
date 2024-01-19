@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { CgAddR } from "react-icons/cg";
-import PlanAddMadal from "../../modal/PlanAddMadal";
+import PlanAddModal from "../../modal/PlanAddModal";
 
 export default function ToDoAdd() {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -24,7 +24,7 @@ export default function ToDoAdd() {
       >
         <CgAddR className="w-8 h-8 m-1" />
       </div>
-      {showModal ? <PlanAddMadal onCancel={closeModalHandler} /> : null}
+      {showModal ? <PlanAddModal onCancel={closeModalHandler} /> : null}
     </div>
   );
 }
