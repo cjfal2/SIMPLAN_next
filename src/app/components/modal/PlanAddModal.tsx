@@ -68,7 +68,12 @@ export default function PlanAddModal({ onCancel }: Props) {
                 취소
               </button>
 
-              <button className="bg-blue-300 py-2 px-6 rounded-xl">등록</button>
+              <button
+                onClick={() => onCancel()}
+                className="bg-blue-300 py-2 px-6 rounded-xl"
+              >
+                등록
+              </button>
             </div>
           </div>
         </div>

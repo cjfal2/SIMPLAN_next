@@ -56,7 +56,10 @@ export default function TimeDropStart({
                 ))}
               </div>
             </div>
-            <p className="bg-white rounded-b-md" onClick={() => clickStartTime()}>
+            <p
+              className="bg-white rounded-b-md hover:cursor-pointer"
+              onClick={() => clickStartTime()}
+            >
               닫기
             </p>
           </div>

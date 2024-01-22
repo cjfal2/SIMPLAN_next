@@ -1,5 +1,5 @@
 {
-  "2024-1-19": [
+  "2024-1-23": [
     {
       "id": 1,
       "title": "프로젝트 설계",
@@ -56,7 +56,7 @@
       "category": "개인활동"
     }
   ],
-  "2024-1-18": [
+  "2024-1-22": [
     {
       "id": 1,
       "title": "프로젝트 설계",
@@ -106,8 +106,8 @@
       "title": "핸드폰고치기",
       "content": "뭔가 공부하기 그리고 생각하기",
       "status": "cancel",
-      "planStartTime": "15:00",
-      "planEndTime": "16:00",
+      "planStartTime": "00:00",
+      "planEndTime": "00:00",
       "realStartTime": "00:00",
       "realEndTime": "00:00",
       "category": "개인활동"
