@@ -21,7 +21,7 @@ export default function Navigator() {
   }
   return (
     // 모바일 하단 네비게이션 규칙에 따라 48px로 고정
-    <div className="h-[48px] flex justify-between items-center bg-[#FDE7D7] text-[#ABABAB]">
+    <div className="h-nav flex justify-between items-center bg-[#FDE7D7] text-[#ABABAB]">
       {/* 네비게이션 아이템을 컴포넌트화 한 후 반복문 처리 */}
       {navigatorData.map((data) => (
         <NavigatorItem key={data.eng} info={data} pathName={pathName} />

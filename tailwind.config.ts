@@ -16,6 +16,9 @@ const config: Config = {
       boxShadow: {
         innerDown: "inset -2px 2px 5px 0px rgb(0 0 0 / 0.2)",
       },
+      height: {
+        nav: "48px",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
