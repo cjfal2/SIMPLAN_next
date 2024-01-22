@@ -38,7 +38,7 @@ export function getCalendar(y: number, m: number) {
       : 40 - (prevMonthRest + daysAll); // 다음 달 보여지는 일 수
 
   // 지난 달 보여지는 일 구하기
-  const prevMonthLast: Date = new Date(year, month, 0); // 마지막 0으로 마지막날의 정보 구하기
+  const prevMonthLast: Date = new Date(year, month-1, 0); // 마지막 0으로 마지막날의 정보 구하기
   const prevDate: number = prevMonthLast.getDate();
   const prevDates: number[][] = Array.from(
     { length: prevMonthRest },
