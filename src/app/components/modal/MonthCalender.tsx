@@ -48,6 +48,7 @@ export default function MonthCalender({
   const [newYear, setNewYear] = useState<number>(year); // 바꿀 년도
   const [newMonth, setNewMonth] = useState<number>(month); // 바꿀 월
   const [newDay, setNewDay] = useState<number>(day); // 바꿀 날
+  const [newDOW, setNewDOW] = useState<string>(dayOfWeek);
   const [calendar, setCalendar] = useState<number[][]>(
     getCalendar(newYear, newMonth - 1)
   ); // 해당 년/월 의 캘린더 정보
@@ -79,7 +80,7 @@ export default function MonthCalender({
   };
 
   /** 날짜를 고르는 함수. 이전 달이나 다음 달인 경우 년도와 월을 바꿔준다. */
-  const selDay = (d: number, w: number) => {
+  const selDay = (d: number, w: number, idx: number) => {
     if (w === 0) {
       selMonth(newMonth, false);
     } else if (w === 2) {
@@ -87,6 +88,7 @@ export default function MonthCalender({
     }
 
     setNewDay(d);
+    setNewDOW(daysOfWeek[idx%7][0]);
   };
 
   return (
@@ -114,6 +116,9 @@ export default function MonthCalender({
                 className="hover:cursor-pointer"
               />
             </div>
+            <p className="select-none text-sm w-full bg-orange-100">
+              선택 날짜 : {newYear}년 {newMonth}월 {newDay}일 {newDOW}요일
+            </p>
             {/* 달력 부분 */}
             <div className="grow w-full bg-orange-100 py-2">
               {/* 그리드를 통하여 달력을 표현 */}
@@ -133,7 +138,7 @@ export default function MonthCalender({
                 {calendar.map((date, index) => (
                   <div
                     key={index}
-                    onClick={() => selDay(date[0], date[1])}
+                    onClick={() => selDay(date[0], date[1], index)}
                     className={`select-none
                       h-10
                       rounded-md
@@ -152,7 +157,7 @@ export default function MonthCalender({
                       ${
                         newDay === date[0] &&
                         date[1] === 1 &&
-                        "bg-orange-300 border-2 border-green-400 shadow-innerDown"
+                        "bg-opacity-70 bg-emerald-200 border-2 border-green-400 shadow-innerDown"
                       }
                     `}
                   >
