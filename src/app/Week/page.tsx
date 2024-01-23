@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import WeekTable from "../components/week/WeekTable";
 
 export default function WeekPage() {
   return (
-    <div>WeekPage</div>
-  )
+    <div>
+      <WeekTable />
+    </div>
+  );
 }

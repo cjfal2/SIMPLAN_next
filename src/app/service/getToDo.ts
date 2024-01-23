@@ -18,3 +18,14 @@ export async function getTodayToDo(): Promise<DailyToDoType> {
 
   return allToDoData[`${year}-${month}-${day}`];
 }
+
+export async function getSomedayToDo(
+  year: number,
+  month: number,
+  day: number | string
+): Promise<DailyToDoType> {
+  // getAllToDo 함수의 실행이 완료될 때까지 기다림
+  const allToDoData = await getAllToDo();
+
+  return allToDoData[`${year}-${month}-${day}`];
+}
