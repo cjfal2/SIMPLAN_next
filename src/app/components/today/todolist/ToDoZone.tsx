@@ -9,7 +9,7 @@ export default async function ToDoZone() {
   // 일정이 8개가 넘으면 추가버튼이 보이지 않게 설정 + 일정이 0인 것을 파악
   const ToDoAmount: number = allToDo ? allToDo.length : 0;
   return (
-    <ul className="grid grid-cols-2 gap-2">
+    <ul className="grid grid-cols-2 gap-2 w-full">
       {ToDoAmount !== 0 ? (
         allToDo.map((toDo) => (
           <li key={toDo.id}>

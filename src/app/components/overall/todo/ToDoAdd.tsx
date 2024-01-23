@@ -12,13 +12,14 @@ export default function ToDoAdd() {
   }
 
   return (
-    <div>
+    <div className="h-full">
       <div
         className="
           bg-[#ffe6c6]
           rounded-2xl
           p-2 flex items-center justify-center
           hover:cursor-pointer hover:scale-95
+          h-full
         "
         onClick={() => setShowModal(true)}
       >

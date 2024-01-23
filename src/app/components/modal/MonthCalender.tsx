@@ -105,7 +105,7 @@ export default function MonthCalender({
               {/* 월 이동 버튼 왼쪽 */}
               <FaArrowAltCircleLeft
                 onClick={() => selMonth(newMonth, false)}
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer hover:scale-105"
               />
               <p className="font-bold select-none">
                 {newYear}년 {newMonth}월
@@ -113,7 +113,7 @@ export default function MonthCalender({
               {/* 월 이동 버튼 오른쪽 */}
               <FaArrowAltCircleRight
                 onClick={() => selMonth(newMonth, true)}
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer hover:scale-105"
               />
             </div>
             <p className="select-none text-sm w-full bg-orange-100">
@@ -142,6 +142,9 @@ export default function MonthCalender({
                     className={`select-none
                       h-10
                       rounded-md
+                      hover:cursor-pointer
+                      hover:scale-105
+                      hover:bg-opacity-45
                       text-xs
                       font-bold
                       ${
@@ -157,7 +160,7 @@ export default function MonthCalender({
                       ${
                         newDay === date[0] &&
                         date[1] === 1 &&
-                        "bg-opacity-70 bg-emerald-200 border-2 border-green-400 shadow-innerDown"
+                        "border-2 border-green-400 shadow-innerDown"
                       }
                     `}
                   >
