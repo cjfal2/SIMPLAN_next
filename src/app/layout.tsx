@@ -24,9 +24,9 @@ export default function RootLayout({
       {/* TODO: 나중에 border 지우기 */}
       <body className="flex flex-col w-full mx-auto border-2">
         <Header />
-        <Navigator />
         {/* grow: 헤더와 네비게이터 사이 공간을 꽉 채우기 위한 코드*/}
-        <main className="grow">{children}</main>
+        <main className="grow max-h-[calc(100% - 96px)]">{children}</main>
+        <Navigator />
       </body>
     </html>
   );

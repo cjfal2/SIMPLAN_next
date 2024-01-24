@@ -27,7 +27,7 @@ export default async function WeekItem({ year, month, someday, idx }: Props) {
         somedayToDo.map((toDo) => (
           <p
             key={toDo.id}
-            className={`px-2 py-0.5 truncate m-0.5 rounded-lg ${colors[idx]}`}
+            className={`text-sm px-2 py-0.5 truncate m-0.5 rounded-lg ${colors[idx]}`}
           >
             {toDo.title}
           </p>

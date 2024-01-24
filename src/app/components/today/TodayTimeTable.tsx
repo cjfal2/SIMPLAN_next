@@ -41,11 +41,11 @@ export default async function TodayTimeTable() {
       <div className="text-2xl font-bold bg-[#FAC69F] py-1 rounded-t-xl">
         TodayTimeTable
       </div>
-      <div className="h-[400px] rounded-b-xl overflow-auto">
+      <div className="rounded-b-xl overflow-auto">
         <div className="flex bg-white">
-          <div className="flex flex-col px-1">
+          <div className="flex-grow max-h-[24svh] justify-start items-start flex-col overflow-auto">
             {times.map((time) => (
-              <div key={time} className="flex justify-center items-center gap-2">
+              <div key={time} className="flex justify-start items-center gap-2">
                 <div className="px-2 py-2 border-r-4 border-black">
                   {time}
                 </div>

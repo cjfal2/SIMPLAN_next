@@ -11,7 +11,7 @@ type Props = {
 export default function NavigatorItem({ info, pathName }: Props) {
   return (
     <Link
-      href={`/${info.eng !== "Today" ? info.eng : ""}`}
+      href={`/${info.eng}`}
       className={`
       h-full w-1/4 flex flex-col justify-center items-center
       ${

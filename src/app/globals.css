@@ -7,13 +7,13 @@ html,
 /* 세팅을 위해 https://viewportsizer.com/devices/ 사이트 참고
 스마트폰 기준 제일 큰 화면과 작은 화면의 크기를 채용*/
 body {
-  height: device-height;
+  min-height: 100svh;
   max-height: 1067px;
 
   overflow-x: hidden;
   overflow-y: auto;
   
-  width: device-width;
+  width: 100svw;
   min-width: 320px;
   max-width: 480px;
   
@@ -21,7 +21,7 @@ body {
   margin: 0 auto;
   
   text-align: center;
-  justify-content: center;
+  
   
   background-color: #FEF1E8;
 }
