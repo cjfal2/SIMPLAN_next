@@ -21,7 +21,7 @@ body {
   margin: 0 auto;
   
   text-align: center;
-  
+  justify-content: center;
   
   background-color: #FEF1E8;
 }

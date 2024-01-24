@@ -76,7 +76,7 @@ export default function MonthPageCalendar({
   };
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col justify-center items-center  w-full">
       <div className="rounded-t-md flex justify-between w-full bg-orange-200 px-2 py-2 items-center">
         {/* 월 이동 버튼 왼쪽 */}
         <FaArrowAltCircleLeft
@@ -92,9 +92,6 @@ export default function MonthPageCalendar({
           className="hover:cursor-pointer hover:scale-105"
         />
       </div>
-      <p className="select-none text-sm w-full bg-orange-100">
-        {newYear}년 {newMonth}월 {newDay}일 {newDOW}요일
-      </p>
       {/* 달력 부분 */}
       <div className="grow w-full bg-orange-100 py-2">
         {/* 그리드를 통하여 달력을 표현 */}

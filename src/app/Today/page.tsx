@@ -8,7 +8,7 @@ export default function TodayPage() {
     <div className="px-6">
       <PositiveSentence />
       <ToDoList />
-      <TodayTimeTable />
+      {/* <TodayTimeTable /> */}
     </div>
   );
 }

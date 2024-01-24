@@ -14,15 +14,20 @@ export default function MonthPageItem() {
   const [day, setDay] = useState<number>(dayToday);
   const [dayOfWeek, setDayOfWeek] = useState(daysOfWeek[dayOfWeekToday]);
 
+  // const setSomedayTodo = (y,m,d) => {
+
+  // }
+
+
   return (
-    <div className="flex flex-col justify-center items-center py-4 px-2 w-full">
+    <div className="flex flex-col justify-center items-center py-4 px-2 w-10/12">
       <MonthPageCalendar
         year={year}
         month={month}
         day={day}
         dayOfWeek={dayOfWeek}
       />
-      
+      <div>{year}년 {month}월 {day}일 {dayOfWeek}요일</div>
     </div>
   );
 }
