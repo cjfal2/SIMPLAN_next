@@ -8,10 +8,10 @@ export type ToDoItemType = {
   title: string;
   content: string;
   status: string;
-  planStartTime: Date;
-  planEndTime: Date;
-  realStartTime: Date;
-  realEndTime: Date;
+  planStartTime: string;
+  planEndTime: string;
+  realStartTime: string;
+  realEndTime: string;
   category: string;
 };
 
