@@ -1,8 +1,10 @@
 "use client";
 
 import { getTodayDate } from "@/app/service/getTodayDate";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MonthPageCalendar from "./MonthPageCalendar";
+import { getSomedayToDo } from "@/app/service/getToDo";
+import MonthToDoZone from "./MonthToDoZone";
 
 const daysOfWeek: string[] = ["일", "월", "화", "수", "목", "금", "토"];
 
@@ -13,10 +15,15 @@ export default function MonthPageItem() {
   const [month, setMonth] = useState<number>(monthToday);
   const [day, setDay] = useState<number>(dayToday);
   const [dayOfWeek, setDayOfWeek] = useState(daysOfWeek[dayOfWeekToday]);
+  // const [somedayToDo, setSomedayToDo] = useState(getSomedayToDo(yearToday, monthToday, dayToday))
+  const setSomeday = (y: number, m: number, d: number, w: string) => {
+    setYear(y);
+    setMonth(m);
+    setDay(d);
+    setDayOfWeek(w);
+  };
 
-  // const setSomedayTodo = (y,m,d) => {
-
-  // }
+  
 
 
   return (
@@ -26,8 +33,14 @@ export default function MonthPageItem() {
         month={month}
         day={day}
         dayOfWeek={dayOfWeek}
+        setSomeday={setSomeday}
       />
-      <div>{year}년 {month}월 {day}일 {dayOfWeek}요일</div>
+      <MonthToDoZone
+        year={year}
+        month={month}
+        someday={day}
+        dayOfWeek={dayOfWeek}
+      />
     </div>
   );
 }
