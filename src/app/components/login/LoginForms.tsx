@@ -3,10 +3,12 @@
 import { doSignIn } from "@/app/api/signIn";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useState } from "react";
 
 export default function LoginForms() {
+  const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,6 +16,8 @@ export default function LoginForms() {
     const loginStatus = await doSignIn(username, password);
     if (loginStatus !== false) {
       localStorage.setItem("token", loginStatus["accessToken"]);
+      
+      router.push("/Today")
     }
   };
 
