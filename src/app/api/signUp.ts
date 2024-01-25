@@ -20,10 +20,10 @@ export async function doSignUp(
 
     if (response.ok) {
       // 성공적으로 처리된 경우의 로직
-      console.log("가입이 완료되었습니다.");
+      return true
     } else {
       // 오류가 발생한 경우의 로직
-      console.error("가입에 실패했습니다.", response);
+      return false
     }
   } catch (error) {
     console.error("네트워크 오류:", error);

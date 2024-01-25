@@ -5,7 +5,7 @@ import React from "react";
 import { useState } from "react";
 export default function LoginForms() {
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center gap-3">
       <input
         type="text"
         placeholder="ID"
