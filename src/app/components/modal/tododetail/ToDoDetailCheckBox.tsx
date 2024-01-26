@@ -5,7 +5,7 @@ type Props = {
   status: string;
 };
 const iconMapping: Record<string, React.ReactNode> = {
-  yet: (
+  DEFAULT: (
     <BiRectangle className="w-8 h-8 text-black hover:scale-105 hover:cursor-pointer hover:text-opacity-80" />
   ),
   delay: (
@@ -28,7 +28,7 @@ export default function ToDoDetailCheckBox({ status }: Props) {
         {iconMapping[status]}
       </div>
       <div className="flex gap-2">
-        {iconMapping["yet"]}
+        {iconMapping["DEFAULT"]}
         {iconMapping["delay"]}
         {iconMapping["cancel"]}
         {iconMapping["done"]}

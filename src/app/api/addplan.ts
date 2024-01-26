@@ -1,9 +1,15 @@
+import axios from 'axios';
+
 const cate: Record<string, string> = {
   "직접성과": "DIRECT",
   "간접성과": "INDIRECT",
   "개인활동": "PRIVATE",
   "자기계발": "SELFDEV",
   "네트워킹": "NETWORK",
+};
+
+export function transNumber(num: number) {
+  return num.toString().length === 1 ? "0" + num.toString() : num.toString();
 };
 
 
@@ -26,9 +32,6 @@ export async function addPlan(
 
   const apiUrl = "https://gittgi.site/plan";
 
-  const transNumber = (num: number) => {
-    return num.toString().length === 1 ? "0" + num.toString() : num.toString();
-  };
   const m = transNumber(month);
   const d = transNumber(day);
   const sh = transNumber(planStartTimeHour);
@@ -38,34 +41,24 @@ export async function addPlan(
   const planStartTime = `${year}-${m}-${d}T${sh}:${sm}:00`;
   const planEndTime = `${year}-${m}-${d}T${eh}:${em}:00`;
 
-  console.log(title, content, cate[category], planStartTime, planEndTime);
 
-  // const formData = new URLSearchParams();
-  // formData.append("title", title);
-  // formData.append("content", content);
-  // formData.append("category", cate[category]);
-  // formData.append("isImportant", "True");
-  // formData.append("planStartTime", planStartTime);
-  // formData.append("planEndTime", planEndTime);
 
   try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
+    const response = await axios.post(apiUrl, {
+      category: cate[category],
+      title: title,
+      isImportant: "True",
+      planStartTime: planStartTime,
+      planEndTime: planEndTime,
+      content: content,
+    }, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        category: cate[category],
-        title: title,
-        isImportant: "True",
-        planStartTime: planStartTime,
-        planEndTime: planEndTime,
-        content: content,
-    }),
     });
 
-    if (response.ok) {
+    if (response.status === 201) {
       console.log("추가 성공!");
       return true;
     } else {

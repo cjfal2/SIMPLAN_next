@@ -55,7 +55,7 @@ export default function MonthCalender({
 
   useEffect(() => {
     setCalendar(getCalendar(newYear, newMonth - 1));
-    console.log(newMonth);
+
   }, [newYear, newMonth]); // useEffect를 사용하여 년/월이 바뀌는 것을 계속 추적
 
   /** 월을 이동하는 함수.  m: 지금 월 , w: 월을 더하는지 빼는지 */

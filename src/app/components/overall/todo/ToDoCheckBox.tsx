@@ -7,7 +7,7 @@ type Props = {
 };
 
 const iconMapping: Record<string, React.ReactNode> = {
-  yet: <BiRectangle className="w-8 h-8 text-black" />,
+  DEFAULT: <BiRectangle className="w-8 h-8 text-black" />,
   delay: <CgArrowRightR className="w-8 h-8 text-[#7D87FF]" />,
   cancel: <CgCloseR className="w-8 h-8 text-[#FF5966]" />,
   done: <CgCheckR className="w-8 h-8 text-[#48EE8F]" />,

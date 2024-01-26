@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import DatePick from "./DatePick";
 import { getTodayDate } from "@/app/service/getTodayDate";
 import { addPlan } from "@/app/api/addplan";
+import { useRouter } from "next/navigation";
 
 type Props = {
   onCancel: () => void;
@@ -14,6 +15,7 @@ const daysOfWeek: string[] = ["일", "월", "화", "수", "목", "금", "토"];
 
 export default function PlanAddModalForm({ onCancel }: Props) {
   const [category, setCategory] = useState("직접성과");
+  const router = useRouter();
 
   let [yearToday, monthToday, dayToday, dayOfWeekToday]: number[] =
     getTodayDate();
@@ -85,6 +87,7 @@ export default function PlanAddModalForm({ onCancel }: Props) {
         newContent
       );
       onCancel();
+      router.replace("/Today");
     }
   };
 
