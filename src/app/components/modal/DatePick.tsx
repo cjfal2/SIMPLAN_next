@@ -1,6 +1,6 @@
 "use client";
 
-import { getTodayDate } from "@/app/service/getTodayDate";
+import { getTodayDate } from "@/app/api/getTodayDate";
 import React, { useState } from "react";
 import TimeDropHour from "./TimeDropStart";
 import TimeDropMinute from "./TimeDropEnd";

@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import DatePick from "./DatePick";
-import { getTodayDate } from "@/app/service/getTodayDate";
-import { addPlan } from "@/app/apis/addPlan";
+import { getTodayDate } from "@/app/api/getTodayDate";
+import { addPlan } from "@/app/api/addPlan";
 
 
 

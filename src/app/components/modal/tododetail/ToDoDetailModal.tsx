@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import DatePick from ".././DatePick";
 import { ToDoItemType } from "@/app/model/types";
 import ToDoDetailCheckBox from "./ToDoDetailCheckBox";
-import { deletePlan } from "@/app/apis/deletePlan";
-import { putPlan } from "@/app/apis/putPlan";
+import { deletePlan } from "@/app/api/deletePlan";
+import { putPlan } from "@/app/api/putPlan";
 
 type Props = {
   toDo: ToDoItemType;

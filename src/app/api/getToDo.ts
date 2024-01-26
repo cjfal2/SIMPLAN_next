@@ -1,7 +1,7 @@
 import path from "path";
 import axios from "axios";
 import { DailyToDoType, ToDoDataType } from "../model/types";
-import { transNumber } from "../apis/transNumer";
+import { transNumber } from "./transNumer";
 
 // export async function getAllToDo(): Promise<ToDoDataType> {
 //   const filePath = path.join(process.cwd(), "data", "tododata.json");

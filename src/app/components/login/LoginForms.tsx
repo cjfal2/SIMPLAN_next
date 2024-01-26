@@ -1,6 +1,6 @@
 "use client";
 
-import { doSignIn } from "@/app/apis/signIn";
+import { doSignIn } from "@/app/api/signIn";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

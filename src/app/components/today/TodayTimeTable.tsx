@@ -1,5 +1,5 @@
 import React from "react";
-import { getTodayToDo } from "@/app/service/getToDo";
+import { getTodayToDo } from "@/app/api/getToDo";
 import { DailyToDoType } from "@/app/model/types";
 
 const times: string[] = [
