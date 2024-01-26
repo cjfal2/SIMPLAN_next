@@ -5,7 +5,7 @@ module.exports = {
     return [
       {
         // matching all API routes
-        source: "https://gittgi.site/:path*",
+        source: "/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
@@ -14,5 +14,14 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: `https://gittgi.site/:path*`,
+      },
+    ];
+  },
 };
