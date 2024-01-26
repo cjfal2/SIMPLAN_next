@@ -5,7 +5,7 @@ module.exports = {
   //   return [
   //     {
   //       // matching all API routes
-  //       source: "/apis/v2/:path*",
+  //       source: "/:path*",
   //       headers: [
   //         { key: "Access-Control-Allow-Credentials", value: "true" },
   //         { key: "Access-Control-Allow-Origin", value: "*" },
@@ -27,7 +27,7 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: "/apis/v2/:path*",
+        source: "/:path*",
         destination: `https://gittgi.site/:path*`,
       },
     ];

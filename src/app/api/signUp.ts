@@ -3,7 +3,7 @@ export async function doSignUp(
   password: string,
   nickname: string
 ) {
-  const apiUrl = "/apis/v2/join";
+  const apiUrl = "/join";
   const formData = new URLSearchParams();
   formData.append("username", username);
   formData.append("password", password);

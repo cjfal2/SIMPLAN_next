@@ -1,5 +1,5 @@
 export async function doSignIn(username: string, password: string) {
-  const apiUrl = "/apis/v2/login";
+  const apiUrl = "/login";
   const formData = new URLSearchParams();
   formData.append("username", username);
   formData.append("password", password);

@@ -28,7 +28,7 @@ export async function addPlan(
     accessToken = localStorage.getItem("token");
   }
 
-  const apiUrl = "/apis/v2/plan";
+  const apiUrl = "/plan";
 
   const m = transNumber(month);
   const d = transNumber(day);
