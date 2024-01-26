@@ -2,12 +2,11 @@ import path from "path";
 import axios from "axios";
 import { DailyToDoType, ToDoDataType } from "../model/types";
 import { transNumber } from "../api/addPlan";
-import { readFile } from "fs/promises";
 
-export async function getAllToDo(): Promise<ToDoDataType> {
-  const filePath = path.join(process.cwd(), "data", "tododata.json");
-  return readFile(filePath, "utf-8").then<ToDoDataType>(JSON.parse);
-}
+// export async function getAllToDo(): Promise<ToDoDataType> {
+//   const filePath = path.join(process.cwd(), "data", "tododata.json");
+//   return readFile(filePath, "utf-8").then<ToDoDataType>(JSON.parse);
+// }
 
 export async function getTodayToDo() {
   let accessToken: string | null = "";
@@ -54,13 +53,13 @@ export async function getTodayToDo() {
   return todayToDo;
 }
 
-export async function getSomedayToDo(
-  year: number,
-  month: number,
-  day: number | string
-): Promise<DailyToDoType> {
-  // getAllToDo 함수의 실행이 완료될 때까지 기다림
-  const allToDoData = await getAllToDo();
+// export async function getSomedayToDo(
+//   year: number,
+//   month: number,
+//   day: number | string
+// ): Promise<DailyToDoType> {
+//   // getAllToDo 함수의 실행이 완료될 때까지 기다림
+//   const allToDoData = await getAllToDo();
 
-  return allToDoData[`${year}-${month}-${day}`];
-}
+//   return allToDoData[`${year}-${month}-${day}`];
+// }
