@@ -5,7 +5,7 @@ export async function deletePlan(id: number) {
   if (typeof window !== "undefined") {
     accessToken = localStorage.getItem("token");
   }
-  const apiUrl = `https://gittgi.site/plan/${id}`;
+  const apiUrl = `/plan/${id}`;
 
   try {
     const response = await axios.delete(apiUrl, {

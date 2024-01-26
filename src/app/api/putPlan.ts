@@ -33,7 +33,7 @@ export async function putPlan(
     accessToken = localStorage.getItem("token");
   }
 
-  const apiUrl = `https://gittgi.site/plan/${id}`;
+  const apiUrl = `/plan/${id}`;
 
   const makeTime = (
     y: number,

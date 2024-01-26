@@ -3,7 +3,7 @@ export async function doSignUp(
   password: string,
   nickname: string
 ) {
-  const apiUrl = "https://gittgi.site/join";
+  const apiUrl = "/join";
   const formData = new URLSearchParams();
   formData.append("username", username);
   formData.append("password", password);
