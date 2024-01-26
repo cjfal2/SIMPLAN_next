@@ -8,7 +8,10 @@ export async function getAllToDo(): Promise<ToDoDataType> {
 }
 
 export async function getTodayToDo() {
-  const accessToken = localStorage.getItem("accessToken");
+  let accessToken: string | null = "";
+  if (typeof window !== "undefined") {
+    accessToken = localStorage.getItem("token");
+  }
 
   const today: Date = new Date();
   const year: number = today.getFullYear();
@@ -20,7 +23,7 @@ export async function getTodayToDo() {
   queryParams.append("query", "day");
   queryParams.append("date", date);
   let todayToDo: DailyToDoType = new Array();
-  const apiUrl = "http://15.165.216.177:8080/plan";
+  const apiUrl = "https://gittgi.site/plan";
   if (accessToken) {
     // 토큰이 있는 경우, 백엔드에 요청하여 개인 정보 가져오기
     fetch(apiUrl, {
@@ -33,7 +36,7 @@ export async function getTodayToDo() {
       .then((response) => response.json())
       .then((data) => {
         // 받아온 개인 정보를 사용
-        console.log(data)
+        console.log(data);
         todayToDo.push(data);
       })
       .catch((error) => {

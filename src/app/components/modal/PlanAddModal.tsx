@@ -4,6 +4,9 @@ import DatePick from "./DatePick";
 type Props = {
   onCancel: () => void;
 };
+// 계획 타입 (DIRECT, INDIRECT, PRIVATE, SELFDEV, NETWORK)
+
+const categories = ["직접성과", "간접성과", "개인활동", "자기계발", "네트워킹"];
 
 export default function PlanAddModal({ onCancel }: Props) {
   return (
@@ -40,21 +43,14 @@ export default function PlanAddModal({ onCancel }: Props) {
                 <div className="flex flex-col mt-2 items-start justify-start gap-1">
                   <p>카테고리</p>
                   <div className="grid grid-cols-3 gap-2">
-                    <div className="p-2 bg-orange-400 rounded-lg hover:cursor-pointer hover:scale-95">
-                      직접성과
-                    </div>
-                    <div className="p-2 bg-orange-200 rounded-lg hover:cursor-pointer hover:scale-95">
-                      직접성과
-                    </div>
-                    <div className="p-2 bg-orange-200 rounded-lg hover:cursor-pointer hover:scale-95">
-                      직접성과
-                    </div>
-                    <div className="p-2 bg-orange-200 rounded-lg hover:cursor-pointer hover:scale-95">
-                      직접성과
-                    </div>
-                    <div className="p-2 bg-orange-200 rounded-lg hover:cursor-pointer hover:scale-95">
-                      직접성과
-                    </div>
+                    {categories.map((cate) => (
+                      <div
+                        key={cate}
+                        className="p-2 bg-orange-400 rounded-lg hover:cursor-pointer hover:scale-95"
+                      >
+                        {cate}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -63,7 +59,7 @@ export default function PlanAddModal({ onCancel }: Props) {
             <div className="flex gap-2">
               <button
                 onClick={() => onCancel()}
-                className="bg-gray-300 py-2 px-6 rounded-xl"
+                className="bg-gray py-2 px-6 rounded-xl"
               >
                 취소
               </button>

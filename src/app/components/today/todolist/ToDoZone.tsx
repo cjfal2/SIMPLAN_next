@@ -10,19 +10,22 @@ export default async function ToDoZone() {
   const ToDoAmount: number = allToDo ? allToDo.length : 0;
 
   if (ToDoAmount === 0) {
-    return <div>일정이 없습니다.</div>;
+    return (
+      <div>
+        <ToDoAdd />
+      </div>
+    );
   } else {
     const sortedAllToDo = allToDo
       .filter((item) => item.planStartTime !== "00:00")
       .sort((a, b) => a.planStartTime.localeCompare(b.planStartTime));
 
     const noTimeToDo = allToDo.filter((item) => item.planStartTime === "00:00");
-    
+
     const now = new Date();
     const nowHour = now.getHours();
     const nowMinute = now.getMinutes();
     const nowTime = `${nowHour}:${nowMinute}`;
-
 
     return (
       <div className="w-full">

@@ -1,5 +1,5 @@
 export async function doSignIn(username: string, password: string) {
-  const apiUrl = "http://15.165.216.177:8080/login";
+  const apiUrl = "https://gittgi.site/login";
   const formData = new URLSearchParams();
   formData.append("username", username);
   formData.append("password", password);

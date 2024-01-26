@@ -9,7 +9,7 @@ export default async function HomePage() {
         alt="심플랜로고"
         width={200}
         height={200}
-        className="rounded-full"
+        className="rounded-full mb-6"
       />
       <LoginForms />
     </div>

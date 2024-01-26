@@ -16,13 +16,13 @@ export default function LoginForms() {
     const loginStatus = await doSignIn(username, password);
     if (loginStatus !== false) {
       localStorage.setItem("token", loginStatus["accessToken"]);
-      
-      router.push("/Today")
+
+      router.push("/Today");
     }
   };
 
   return (
-    <div className="px-6 flex flex-col gap-3 w-full h-full justify-center items-center">
+    <div className="flex flex-col gap-3 w-full justify-center items-center">
       <input
         type="text"
         placeholder="ID"
