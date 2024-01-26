@@ -66,9 +66,9 @@ export default function ToDoDetailModal({ toDo, onCancel }: Props) {
               ></textarea>
               <div className="flex flex-col items-start w-full gap-1">
                 {/* TODO: DetailDatePick 도 만들어야 할듯 */}
-                <DatePick />
+                {/* <DatePick /> */}
                 {/* TODO: DatePickReal 도 만들어야 할듯 */}
-                <DatePick />
+                {/* <DatePick /> */}
                 {/* TODO: 컴포넌트 분리 후 UX 고치기 */}
                 <div className="flex flex-col mt-2 items-start justify-start gap-1">
                   <p>카테고리</p>
