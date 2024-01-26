@@ -8,9 +8,9 @@ type Props = {
 
 const iconMapping: Record<string, React.ReactNode> = {
   DEFAULT: <BiRectangle className="w-8 h-8 text-black" />,
-  delay: <CgArrowRightR className="w-8 h-8 text-[#7D87FF]" />,
-  cancel: <CgCloseR className="w-8 h-8 text-[#FF5966]" />,
-  done: <CgCheckR className="w-8 h-8 text-[#48EE8F]" />,
+  DELAYED: <CgArrowRightR className="w-8 h-8 text-[#7D87FF]" />,
+  CANCEL: <CgCloseR className="w-8 h-8 text-[#FF5966]" />,
+  DONE: <CgCheckR className="w-8 h-8 text-[#48EE8F]" />,
 };
 
 export default function ToDoCheckBox({ status }: Props) {

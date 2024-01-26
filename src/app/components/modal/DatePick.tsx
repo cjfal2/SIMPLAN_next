@@ -23,6 +23,7 @@ type Props = {
   changeYear: (num: number) => void;
   changeMonth: (num: number) => void;
   changeDay: (num: number) => void;
+  flag: string;
 };
 
 export default function DatePick({
@@ -41,6 +42,7 @@ export default function DatePick({
   changeYear,
   changeMonth,
   changeDay,
+  flag,
 }: Props) {
   const [dayOfWeek, setDayOfWeek] = useState(daysOfWeek[dayOfWeekToday]);
 
@@ -66,20 +68,28 @@ export default function DatePick({
 
   return (
     <div className="flex flex-col items-start w-full gap-1">
-      <MonthCalender
-        year={year}
-        month={month}
-        day={day}
-        dayOfWeek={dayOfWeek}
-        clickCalendar={clickCalendar}
-        changeYear={changeYear}
-        isClickedCalendar={isClickedCalendar}
-        changeMonth={changeMonth}
-        changeDay={changeDay}
-        changeDayOfWeek={changeDayOfWeek}
-      />
+      {flag === "계획" ? (
+        <MonthCalender
+          year={year}
+          month={month}
+          day={day}
+          dayOfWeek={dayOfWeek}
+          clickCalendar={clickCalendar}
+          changeYear={changeYear}
+          isClickedCalendar={isClickedCalendar}
+          changeMonth={changeMonth}
+          changeDay={changeDay}
+          changeDayOfWeek={changeDayOfWeek}
+        />
+      ) : (
+        <></>
+      )}
       <div className="flex items-center justify-between w-full">
+        <div className="flex flex-col">
+
+        <p>{flag}</p>
         <p>시작</p>
+        </div>
         <TimeDropHour
           isClickedStart={isClickedStart}
           clickStartTime={clickStartTime}

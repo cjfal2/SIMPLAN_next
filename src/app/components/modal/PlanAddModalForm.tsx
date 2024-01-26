@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import DatePick from "./DatePick";
 import { getTodayDate } from "@/app/service/getTodayDate";
-import { addPlan } from "@/app/api/addplan";
-import { useRouter } from "next/navigation";
+import { addPlan } from "@/app/api/addPlan";
 
 type Props = {
   onCancel: () => void;
@@ -15,7 +14,6 @@ const daysOfWeek: string[] = ["일", "월", "화", "수", "목", "금", "토"];
 
 export default function PlanAddModalForm({ onCancel }: Props) {
   const [category, setCategory] = useState("직접성과");
-  const router = useRouter();
 
   let [yearToday, monthToday, dayToday, dayOfWeekToday]: number[] =
     getTodayDate();
@@ -86,8 +84,7 @@ export default function PlanAddModalForm({ onCancel }: Props) {
         newTitle,
         newContent
       );
-      onCancel();
-      router.replace("/Today");
+      window.location.reload();
     }
   };
 
@@ -133,6 +130,7 @@ export default function PlanAddModalForm({ onCancel }: Props) {
               changeYear={changeYear}
               changeMonth={changeMonth}
               changeDay={changeDay}
+              flag={"계획"}
             />
             {/* TODO: 컴포넌트 분리 후 UX 고치기 */}
             <div className="flex flex-col mt-2 items-start justify-start gap-1">

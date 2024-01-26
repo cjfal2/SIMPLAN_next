@@ -1,7 +1,7 @@
 import path from "path";
 import axios from "axios";
 import { DailyToDoType, ToDoDataType } from "../model/types";
-import { transNumber } from "../api/addplan";
+import { transNumber } from "../api/addPlan";
 
 // export async function getAllToDo(): Promise<ToDoDataType> {
 //   const filePath = path.join(process.cwd(), "data", "tododata.json");
@@ -40,6 +40,7 @@ export async function getTodayToDo() {
 
       // 받아온 데이터를 사용
       todayToDo.push(...response.data.data[date]);
+      console.log(response.data.data[date])
     } catch (error) {
       // 오류 처리
       console.error("개인 정보 요청 중 오류 발생:", error);
