@@ -18,7 +18,7 @@ export async function doSignIn(username: string, password: string) {
       console.log("로그인 성공!", data);
       return data;
     } else {
-      console.error("로그인에 실패했습니다.");
+      console.error("로그인에 실패했습니다.", response);
       return false;
     }
   } catch (error) {
