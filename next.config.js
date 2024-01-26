@@ -20,7 +20,7 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        destination: `https://gittgi.site/:path*`,
+        destination: `/:path*`,
       },
     ];
   },
