@@ -28,7 +28,7 @@ export async function addPlan(
     accessToken = localStorage.getItem("token");
   }
 
-  const apiUrl = "https://gittgi.site/plan";
+  const apiUrl = "/apis/v2/plan";
 
   const m = transNumber(month);
   const d = transNumber(day);

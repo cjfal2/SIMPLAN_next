@@ -23,7 +23,7 @@ export async function getTodayToDo() {
   const date = `${year}-${m}-${d}`;
 
   let todayToDo: DailyToDoType = new Array();
-  const apiUrl = "https://gittgi.site/plan";
+  const apiUrl = "/apis/v2/plan";
 
   if (accessToken) {
     try {
