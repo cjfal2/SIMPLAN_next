@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { transNumber } from './transNumer';
+
 
 const cate: Record<string, string> = {
   "직접성과": "DIRECT",
@@ -6,10 +8,6 @@ const cate: Record<string, string> = {
   "개인활동": "PRIVATE",
   "자기계발": "SELFDEV",
   "네트워킹": "NETWORK",
-};
-
-export function transNumber(num: number) {
-  return num.toString().length === 1 ? "0" + num.toString() : num.toString();
 };
 
 
