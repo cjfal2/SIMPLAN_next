@@ -11,6 +11,7 @@ function findNextTime(dataArray: DailyToDoType) {
   const currentHour = now.getHours();
   const currentMinute = now.getMinutes();
 
+  // TODO: 로직이 이상함
   const nextTimeObjects = dataArray.map((data) => {
     const [planHour, planMinute] = transTime(data.planStartTime.toString()).split(':').map(Number);
 

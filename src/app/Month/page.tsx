@@ -11,7 +11,7 @@
 export default function MonthPage() {
   return (
     <div className='w-full justify-center items-center flex'>
-      ㅇㅁㄴㅇ
+      <p>asdf</p>
     </div>
   )
 }
