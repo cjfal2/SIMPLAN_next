@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import DatePick from "./DatePick";
 import { getTodayDate } from "@/app/service/getTodayDate";
-import { addPlan } from '../../../app/api/addPlan';
+import { addPlan } from '../../apis/addPlan';
 
 
 type Props = {

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { doSignUp } from "../api/signUp";
+import { doSignUp } from "../apis/signUp";
 import { useRouter } from 'next/navigation'
 
 
