@@ -61,11 +61,12 @@ export default function ToDoZone() {
 
     const noTimeToDo = allToDo.filter((item) => transTime(item.planStartTime.toString()) === "00:00");
     const nextToDo = findNextTime(sortedAllToDo);
-
+    console.log(sortedAllToDo, "A",nextToDo, "B", noTimeToDo)
     return (
       <div className="w-full">
         <div>다음 일정</div>
-          <ToDoItem toDo={nextToDo}/>
+          {/* 로직이 이상함 */}
+          {/* <ToDoItem toDo={nextToDo}/> */}
         <div className="mt-4">시간표</div>
         <ul className="grid grid-cols-2 gap-2 w-full">
           {sortedAllToDo.map((toDo) => (

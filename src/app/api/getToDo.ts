@@ -23,7 +23,7 @@ export async function getTodayToDo() {
   const date = `${year}-${m}-${d}`;
 
   let todayToDo: DailyToDoType = new Array();
-  const apiUrl = "/plan";
+  const apiUrl = "https://gittgi.site/plan";
 
   if (accessToken) {
     try {
@@ -40,7 +40,7 @@ export async function getTodayToDo() {
 
       // 받아온 데이터를 사용
       todayToDo.push(...response.data.data[date]);
-      console.log(response.data.data[date]);
+      console.log(response.data.data[date], "여기");
     } catch (error) {
       // 오류 처리
       console.error("개인 정보 요청 중 오류 발생:", error);
