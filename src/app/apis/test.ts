@@ -3,7 +3,7 @@ import axios from "axios";
 
 export async function test() {
   // const apiUrl = "/healthcheck";
-  const apiUrl = "https://gittgi.site/healthcheck";
+  const apiUrl = "/healthcheck";
   try {
     const response = await axios.get(apiUrl, {
       headers: {
