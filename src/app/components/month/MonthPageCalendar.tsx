@@ -1,6 +1,6 @@
 "use client";
 
-import { getCalendar } from "@/app/api/getCalendar";
+import { getCalendar } from "@/app/apis/getCalendar";
 import React, { useEffect, useState } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 

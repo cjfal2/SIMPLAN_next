@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import ToDoItem, { transTime } from "../../overall/todo/ToDoItem";
-import { getTodayToDo } from "@/app/api/getToDo";
+import { getTodayToDo } from "@/app/apis/getToDo";
 import { DailyToDoType } from "@/app/model/types";
 import ToDoAdd from "../../overall/todo/ToDoAdd";
 
