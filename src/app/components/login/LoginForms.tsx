@@ -1,8 +1,6 @@
 "use client";
 
 import { doSignIn } from "@/app/apis/signIn";
-import { test } from "@/app/apis/test";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -21,12 +19,6 @@ export default function LoginForms() {
       router.push("/Today");
     }
   };
-  
-  const testing = async () => {
-    test()
-    console.log("테스트")
-  };
-
 
   return (
     <div className="flex flex-col gap-3 w-full justify-center items-center">
@@ -56,9 +48,6 @@ export default function LoginForms() {
           회원가입
         </button>
       </Link>
-      <button onClick={() => testing()}>
-        실험
-      </button>
     </div>
   );
 }

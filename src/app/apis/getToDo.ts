@@ -9,10 +9,7 @@ import { transNumber } from "./transNumer";
 // }
 
 export async function getTodayToDo() {
-  let accessToken: string | null = "";
-  if (typeof window !== "undefined") {
-    accessToken = localStorage.getItem("token");
-  }
+  const accessToken = await getAccessToken();
 
   const today: Date = new Date();
   const year: number = today.getFullYear();
@@ -40,7 +37,6 @@ export async function getTodayToDo() {
 
       // 받아온 데이터를 사용
       todayToDo.push(...response.data.data[date]);
-      console.log(response.data.data[date], "여기");
     } catch (error) {
       // 오류 처리
       console.error("개인 정보 요청 중 오류 발생:", error);
@@ -53,13 +49,51 @@ export async function getTodayToDo() {
   return todayToDo;
 }
 
-// export async function getSomedayToDo(
-//   year: number,
-//   month: number,
-//   day: number | string
-// ): Promise<DailyToDoType> {
-//   // getAllToDo 함수의 실행이 완료될 때까지 기다림
-//   const allToDoData = await getAllToDo();
+export async function getSomedayToDo(year: number, month: number, day: number) {
+  const accessToken = await getAccessToken();
 
-//   return allToDoData[`${year}-${month}-${day}`];
-// }
+  const apiUrl = "/plan";
+  const allToDoData: any[] = [];
+  const m = transNumber(month);
+  const d = transNumber(day);
+  const date = `${year}-${m}-${d}`;
+  console.log(date, accessToken);
+
+  if (accessToken) {
+    try {
+      const response = await axios.get(apiUrl, {
+        params: {
+          query: "week",
+          date: date,
+        },
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      // 받아온 데이터를 사용
+      allToDoData.push(...response.data.data[date]);
+      console.log(response.data.data[date], "여기");
+    } catch (error) {
+      // 오류 처리
+      console.error("주 일정 정보 요청 중 오류 발생:", error);
+    }
+  } else {
+    // 토큰이 없는 경우, 로그인 페이지로 리디렉션 또는 처리
+    console.log("토큰이 없습니다. 로그인 페이지로 이동하세요.");
+  }
+
+  return allToDoData;
+}
+
+async function getAccessToken() {
+  return new Promise<string | null>((resolve) => {
+    if (typeof window !== "undefined") {
+      const accessToken = localStorage.getItem("token");
+      resolve(accessToken);
+    } else {
+      resolve(null);
+    }
+  });
+}

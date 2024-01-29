@@ -61,7 +61,6 @@ export default function ToDoZone() {
 
     const noTimeToDo = allToDo.filter((item) => transTime(item.planStartTime.toString()) === "00:00");
     const nextToDo = findNextTime(sortedAllToDo);
-    console.log(sortedAllToDo, "A",nextToDo, "B", noTimeToDo)
     return (
       <div className="w-full">
         <div>다음 일정</div>
