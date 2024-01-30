@@ -70,6 +70,7 @@ export default function PlanAddModalForm({ onCancel }: Props) {
   };
   const changeDay = (num: number) => {
     setDay(num);
+    console.log("되나?", num)
   };
 
   const sendAdd = () => {

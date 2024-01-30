@@ -8,7 +8,6 @@ export default function WeekTable() {
   const thisWeekInfo = getThisWeekDates();
   const [year, month, today, dow] = getTodayDate();
 
-
   return (
     <div className="w-full h-full flex flex-col">
       <div>
@@ -29,7 +28,7 @@ export default function WeekTable() {
                 <div className="font-bold">{[day[1]]}</div>
                 <div>{day[0]}</div>
               </div>
-              <WeekItem year={year} month={month} someday={day[0]} idx={idx} />
+              <WeekItem year={year} month={day[2]} someday={day[0]} idx={idx} />
             </div>
           ))}
         </div>

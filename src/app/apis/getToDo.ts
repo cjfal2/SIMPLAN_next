@@ -57,7 +57,6 @@ export async function getSomedayToDo(year: number, month: number, day: number) {
   const m = transNumber(month);
   const d = transNumber(day);
   const date = `${year}-${m}-${d}`;
-  console.log(date, accessToken);
 
   if (accessToken) {
     try {
@@ -73,8 +72,12 @@ export async function getSomedayToDo(year: number, month: number, day: number) {
       });
 
       // 받아온 데이터를 사용
-      allToDoData.push(...response.data.data[date]);
-      console.log(response.data.data[date], "여기");
+      if (response.data.data[date]) {
+        allToDoData.push(...response.data.data[date]);
+      }
+      else {
+        console.log("일정이 없음")
+      }
     } catch (error) {
       // 오류 처리
       console.error("주 일정 정보 요청 중 오류 발생:", error);

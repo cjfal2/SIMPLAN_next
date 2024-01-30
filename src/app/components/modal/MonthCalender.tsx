@@ -39,8 +39,8 @@ export default function MonthCalender({
   day,
   dayOfWeek,
   clickCalendar,
-  changeYear,
   isClickedCalendar,
+  changeYear,
   changeMonth,
   changeDay,
   changeDayOfWeek,
@@ -78,6 +78,13 @@ export default function MonthCalender({
       }
     }
   };
+
+  const clickOK = () => {
+    changeDay(newDay)
+    changeMonth(newMonth)
+    changeYear(newYear)
+    clickCalendar()
+  }
 
   /** 날짜를 고르는 함수. 이전 달이나 다음 달인 경우 년도와 월을 바꿔준다. */
   const selDay = (d: number, w: number, idx: number) => {
@@ -172,7 +179,7 @@ export default function MonthCalender({
             {/* TODO: 확인 누르면 상위 컴포넌트가 바뀌는 함수 적용 */}
             <p
               className="bg-slate-100 select-none w-full rounded-b-md hover:cursor-pointer hover:bg-slate-300 py-1"
-              onClick={() => clickCalendar()}
+              onClick={() => clickOK()}
             >
               확인
             </p>
