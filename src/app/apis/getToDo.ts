@@ -1,12 +1,7 @@
-import path from "path";
 import axios from "axios";
-import { DailyToDoType, ToDoDataType } from "../model/types";
+import { DailyToDoType } from "../model/types";
 import { transNumber } from "./transNumer";
 
-// export async function getAllToDo(): Promise<ToDoDataType> {
-//   const filePath = path.join(process.cwd(), "data", "tododata.json");
-//   return readFile(filePath, "utf-8").then<ToDoDataType>(JSON.parse);
-// }
 
 export async function getTodayToDo() {
   const accessToken = await getAccessToken();
