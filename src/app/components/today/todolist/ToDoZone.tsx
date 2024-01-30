@@ -11,9 +11,6 @@ function findNextTime(dataArray: DailyToDoType) {
   const now = new Date();
   const currentHour = now.getHours();
   const currentMinute = now.getMinutes();
-  console.log(currentHour, currentMinute, "!!!!!!!!");
-
-  // TODO: 로직이 이상함
   let nextTimeObjects: ToDoItemType | null = null;
 
   for (let i = 0; i < dataArray.length; i++) {
@@ -22,8 +19,6 @@ function findNextTime(dataArray: DailyToDoType) {
     )
       .split(":")
       .map(Number);
-    console.log(planHour, planMinute, "ads");
-
     if (
       planHour > currentHour ||
       (planHour === currentHour && planMinute >= currentMinute)

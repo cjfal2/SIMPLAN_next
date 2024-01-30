@@ -11,7 +11,7 @@ export default function PlanAddModal({ onCancel }: Props) {
   };
   return (
     <>
-      <div className="justify-center items-center flex overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none pt-16">
+      <div className="justify-center items-center flex overflow-y-auto fixed inset-0 z-14 outline-none focus:outline-none pt-16">
         {/*content*/}
         <div
           id="뒷배경"

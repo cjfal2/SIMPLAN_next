@@ -29,7 +29,7 @@ export default function TimeDropStart({
           {planStartTimeHour}시 {planStartTimeMinute}분
         </span>
         {isClickedStart ? (
-          <div className="z-39 absolute top-full flex flex-col w-full">
+          <div className="z-20 absolute top-full flex flex-col w-full">
             <div className="flex w-full">
               <div className="w-full max-h-[200px] overflow-auto scrollbar-hide bg-slate-50">
                 <p className="border-b-2 sticky top-0 bg-slate-200">hour</p>

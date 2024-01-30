@@ -94,7 +94,7 @@ export default function PlanAddModalForm({ onCancel }: Props) {
   return (
     <div
       id="모달내용"
-      className="absolute min-w-[350px] max-w-[60%] bg-[#FDE7D7] shadow-2xl rounded-2xl z-45"
+      className="absolute min-w-[350px] max-w-[60%] bg-[#FDE7D7] shadow-2xl rounded-2xl z-14"
     >
       {/*header*/}
       <p className="font-bold text-center pt-3 text-xl">일정 추가</p>

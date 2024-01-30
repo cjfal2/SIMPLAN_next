@@ -180,7 +180,7 @@ export default function ToDoDetailModal({ toDo, onCancel }: Props) {
 
   return (
     <>
-      <div className="justify-center items-center flex overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none pt-16">
+      <div className="justify-center items-center flex overflow-y-auto fixed inset-0 z-10 outline-none focus:outline-none pt-16">
         {/*content*/}
         <div
           id="뒷배경"
@@ -188,7 +188,7 @@ export default function ToDoDetailModal({ toDo, onCancel }: Props) {
         ></div>
         <div
           id="모달내용"
-          className="absolute min-w-[350px] max-w-[60%] bg-[#FDE7D7] shadow-2xl rounded-2xl z-45"
+          className="absolute min-w-[350px] max-w-[60%] bg-[#FDE7D7] shadow-2xl rounded-2xl z-12"
         >
           {/*header*/}
           <p className="font-bold text-center pt-3 text-xl">일정 체크</p>

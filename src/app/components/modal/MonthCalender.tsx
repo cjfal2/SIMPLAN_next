@@ -107,7 +107,7 @@ export default function MonthCalender({
         </p>
         {/* 모달 창 */}
         {isClickedCalendar ? (
-          <div className="z-40 absolute top-full flex flex-col w-[16rem]">
+          <div className="z-30 absolute top-full flex flex-col w-[16rem]">
             <div className="rounded-t-md flex justify-between w-full bg-orange-200 px-2 py-2 items-center">
               {/* 월 이동 버튼 왼쪽 */}
               <FaArrowAltCircleLeft
