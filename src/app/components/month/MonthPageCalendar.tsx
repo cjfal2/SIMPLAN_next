@@ -1,6 +1,8 @@
 "use client";
 
 import { getCalendar } from "@/app/apis/getCalendar";
+import { getMonthToDo } from "@/app/apis/getToDo";
+import { transNumber } from "@/app/apis/transNumer";
 import React, { useEffect, useState } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
@@ -23,7 +25,7 @@ type Props = {
   dayOfWeek: string;
   setSomeday: (y: number, m: number, d: number, w: string) => void;
 };
-
+// ...
 export default function MonthPageCalendar({
   year,
   month,
@@ -31,21 +33,40 @@ export default function MonthPageCalendar({
   dayOfWeek,
   setSomeday,
 }: Props) {
-  const [newYear, setNewYear] = useState<number>(year); // 바꿀 년도
-  const [newMonth, setNewMonth] = useState<number>(month); // 바꿀 월
-  const [newDay, setNewDay] = useState<number>(day); // 바꿀 날
+  const [newYear, setNewYear] = useState<number>(year);
+  const [newMonth, setNewMonth] = useState<number>(month);
+  const [newDay, setNewDay] = useState<number>(day);
   const [newDOW, setNewDOW] = useState<string>(dayOfWeek);
   const [calendar, setCalendar] = useState<number[][]>(
     getCalendar(newYear, newMonth - 1)
-  ); // 해당 년/월 의 캘린더 정보
+  );
+  const [statusCount, setStatusCount] = useState<any>({});
+
+  const fetchData = async () => {
+    try {
+      const result = await getMonthToDo(newYear, newMonth, newDay);
+
+      setStatusCount(result);
+    } catch (error) {
+      console.error("상태별 일정 갯수를 가져오는 중 오류 발생:", error);
+    }
+  };
 
   useEffect(() => {
     setCalendar(getCalendar(newYear, newMonth - 1));
-  }, [newYear, newMonth]); // useEffect를 사용하여 년/월이 바뀌는 것을 계속 추적
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [newYear, newMonth]);
+
+  useEffect(() => {
+    // 여기에서 최신 statusCount 값을 사용하거나 다른 작업을 수행합니다.
+  }, [statusCount]);
 
   useEffect(() => {
     setSomeday(newYear, newMonth, newDay, newDOW);
-  }, [newYear, newMonth, newDay, newDOW, setSomeday]);
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [newYear, newMonth, newDay, newDOW]);
 
   /** 월을 이동하는 함수.  m: 지금 월 , w: 월을 더하는지 빼는지 */
   const selMonth = (m: number, w: boolean) => {
@@ -123,11 +144,10 @@ export default function MonthPageCalendar({
                       hover:cursor-pointer
                       hover:scale-105
                       hover:bg-opacity-45
-                      text-xs
                       font-bold
                       ${
                         date[1] === 0 || date[1] === 2
-                          ? "bg-gray-300"
+                          ? "bg-gray"
                           : index % 7 === 0
                           ? "bg-red-300"
                           : (index + 1) % 7 === 0
@@ -142,7 +162,17 @@ export default function MonthPageCalendar({
                       }
                     `}
             >
-              {date[0]}
+              <div className="flex flex-col">
+                <p className="text-sm">{date[0]}</p>
+                <div className="font-medium text-xs text-dark_gray">
+                  {statusCount &&
+                    statusCount[
+                      `${newYear}-${transNumber(newMonth)}-${transNumber(
+                        date[0]
+                      )}`
+                    ]}
+                </div>
+              </div>
             </div>
           ))}
         </div>
