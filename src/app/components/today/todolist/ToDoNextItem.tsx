@@ -26,7 +26,7 @@ const colors: { [status: string]: string } = {
   DEFAULT: "text-black",
   DONE: "text-[#48EE8F]",
   DELAYED: "text-[#7D87FF]",
-  CANCELD: "text-[#FF5966]",
+  CANCELED: "text-[#FF5966]",
 };
 
 export default function ToDoNextItem({ toDo }: Props) {
