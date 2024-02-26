@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export async function doSignUp(
   username: string,
   password: string,
@@ -10,22 +12,21 @@ export async function doSignUp(
   formData.append("nickname", nickname);
 
   try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
+    const response = await axios.post(apiUrl, formData.toString(), {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: formData.toString(),
     });
 
-    if (response.ok) {
+    if (response.status === 200) {
       // 성공적으로 처리된 경우의 로직
-      return true
+      return true;
     } else {
       // 오류가 발생한 경우의 로직
-      return false
+      return false;
     }
   } catch (error) {
     console.error("네트워크 오류:", error);
+    throw error; // 에러를 다시 throw하여 호출자에게 알림
   }
-};
+}

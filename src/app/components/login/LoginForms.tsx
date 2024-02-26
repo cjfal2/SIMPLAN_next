@@ -43,6 +43,11 @@ export default function LoginForms() {
       >
         LOGIN
       </button>
+      <Link href={"https://gittgi.site/api/oauth2/authorization/naver"}>
+        <button className="p-2 rounded-xl w-[240px] bg-green-400 hover:bg-opacity-80">
+          네이버로그인
+        </button>
+      </Link>
       <Link href={"/SignUp"}>
         <button className="p-2 rounded-xl w-[240px] bg-main hover:bg-opacity-80">
           회원가입
