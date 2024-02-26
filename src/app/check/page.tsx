@@ -5,6 +5,7 @@ import { NextResponse } from 'next/server'
 
 export default function CheckPage() {
     let response = NextResponse.next()
+    console.log(response)
     response.cookies.set('RefreshToken', 'false')
     const cookieStore = cookies()
     const theme = cookieStore.get('RefreshToken')
