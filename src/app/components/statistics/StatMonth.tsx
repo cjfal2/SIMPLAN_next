@@ -1,4 +1,4 @@
-import { getMonthData } from "@/app/apis/getToDo";
+import { getData } from "@/app/apis/getToDo";
 import React, { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import { DoughnutChart } from "./DoughnutChart";
@@ -10,7 +10,7 @@ export default function StatMonth() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [status, category] = await getMonthData();
+        const [status, category] = await getData("month");
         setStatusData(status);
         setCategoryData(category);
       } catch (error) {

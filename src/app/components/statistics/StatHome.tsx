@@ -11,7 +11,19 @@ export default function StatHome() {
   const clickNav = (click: string) => {
     setWhere(click);
   };
-  let [year, month, day, dayOfWeek]: number[] = getTodayDate();
+  let [yearToday, monthToday, dayToday, dayOfWeek]: number[] = getTodayDate();
+  const [year, setYear] = useState<number>(yearToday);
+  const [month, setMonth] = useState<number>(monthToday);
+  const [day, setDay] = useState<number>(dayToday);
+  const changeYear = (num: number) => {
+    setYear(num);
+  };
+  const changeMonth = (num: number) => {
+    setMonth(num);
+  };
+  const changeDay = (num: number) => {
+    setDay(num);
+  };
   return (
     <>
       <StatNav clickButton={clickNav} where={where} />

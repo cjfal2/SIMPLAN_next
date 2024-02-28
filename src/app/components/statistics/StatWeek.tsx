@@ -1,4 +1,4 @@
-import { getWeekData } from "@/app/apis/getToDo";
+import { getData } from "@/app/apis/getToDo";
 import { getTodayDate } from "@/app/apis/getTodayDate";
 import React, { useEffect, useState } from "react";
 import BarChart from "./BarChart";
@@ -11,7 +11,7 @@ export default function StatWeek() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [status, category] = await getWeekData();
+        const [status, category] = await getData("week");
         setStatusData(status);
         setCategoryData(category);
       } catch (error) {

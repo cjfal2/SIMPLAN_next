@@ -153,7 +153,7 @@ export async function getSomedayToDo(year: number, month: number, day: number) {
   return allToDoData;
 }  
 
-export async function getSomedayToDoWeek(year: number, month: number, day: number) {
+export async function getInfoData(year: number, month: number, day: number, what: string) {
   const accessToken = await getAccessToken();
 
   const apiUrl = "/plan";
@@ -166,7 +166,7 @@ export async function getSomedayToDoWeek(year: number, month: number, day: numbe
     try {
       const response = await axios.get(apiUrl, {
         params: {
-          query: "week",
+          query: what,
           date: date,
         },  
         headers: {
@@ -192,7 +192,7 @@ export async function getSomedayToDoWeek(year: number, month: number, day: numbe
 }  
 
 
-export async function getWeekData() {
+export async function getData(what: string) {
   let [year, month, day, dayOfWeek]: number[] = getTodayDate();
   const status: Record<string, number> = {
     DEFAULT: 0,
@@ -207,74 +207,7 @@ export async function getWeekData() {
     "SELFDEV": 0,
     "NETWORK": 0
   };
-  const data = await getSomedayToDoWeek(year, month, day);
-  for (let key in data) {
-    for (let key2 in data[key]) {
-      const st = data[key][key2]["status"]
-      const ca = data[key][key2]["category"]
-      status[st] = status[st] + 1
-      category[ca] = category[ca] + 1
-    }
-  }
-  return [status, category]
-}
-
-
-export async function getSomedayToDoMonth(year: number, month: number, day: number) {
-  const accessToken = await getAccessToken();
-
-  const apiUrl = "/plan";
-  const allToDoData: any[] = [];
-  const m = transNumber(month);
-  const d = transNumber(day);
-  const date = `${year}-${m}-${d}`;
-
-  if (accessToken) {
-    try {
-      const response = await axios.get(apiUrl, {
-        params: {
-          query: "month",
-          date: date,
-        },  
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          "Content-Type": "application/json",
-        },  
-      });  
-
-      // 받아온 데이터를 사용
-      if (response.data.data) {
-        allToDoData.push(response.data.data);
-      }  
-    } catch (error) {
-      // 오류 처리
-      console.error("월 일정 정보 요청 중 오류 발생:", error);
-    }  
-  } else {
-    // 토큰이 없는 경우, 로그인 페이지로 리디렉션 또는 처리
-    console.log("토큰이 없습니다. 로그인 페이지로 이동하세요.");
-  }  
-
-  return allToDoData[0];
-}  
-
-
-export async function getMonthData() {
-  let [year, month, day, dayOfWeek]: number[] = getTodayDate();
-  const status: Record<string, number> = {
-    DEFAULT: 0,
-    DONE: 0,
-    DELAYED: 0,
-    CANCELED: 0,
-  };
-  const category: Record<string, number> = {
-    "DIRECT": 0,
-    "INDIRECT": 0,
-    "PRIVATE": 0,
-    "SELFDEV": 0,
-    "NETWORK": 0
-  };
-  const data = await getSomedayToDoMonth(year, month, day);
+  const data = await getInfoData(year, month, day, what);
   for (let key in data) {
     for (let key2 in data[key]) {
       const st = data[key][key2]["status"]
