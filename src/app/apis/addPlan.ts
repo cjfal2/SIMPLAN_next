@@ -57,14 +57,11 @@ export async function addPlan(
     });
 
     if (response.status === 201) {
-      console.log("추가 성공!");
       return true;
     } else {
-      console.error("추가에 실패했습니다.");
       return false;
     }
   } catch (error) {
-    console.error("네트워크 오류:", error);
     return false;
   }
 }

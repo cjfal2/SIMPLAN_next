@@ -101,14 +101,11 @@ export async function putPlan(
     );
 
     if (response.status === 200) {
-      console.log("변경 성공!");
       return true;
     } else {
-      console.error("변경에 실패했습니다.");
       return false;
     }
   } catch (error) {
-    console.error("네트워크 오류:", error);
     return false;
   }
 }

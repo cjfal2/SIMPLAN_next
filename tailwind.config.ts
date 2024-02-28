@@ -25,7 +25,7 @@ const config: Config = {
         forbiden: "#FF5966",
         info: "#78C5FF",
         check: "#48EE8F",
-        delay: "7D87FF",
+        delay: "#7D87FF",
         main_white: "#FEF1E8",
         text_dark: "#565656",
         dark: "#100701",
