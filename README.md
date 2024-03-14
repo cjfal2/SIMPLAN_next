@@ -1,6 +1,6 @@
 # 🗓️ SIMPLAN
 
-![image](https://github.com/cjfal2/SIMPLAN_next/blob/master/pictures/simplan_logo.png){: width="30%" height="30%"}
+![image](/pictures/simplan_logo.png){: width="30" height="30"}
 
 ## 🎞 소개 영상 보기 : none
 
