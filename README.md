@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🗓️ SIMPLAN
 
-## Getting Started
+![image](https://github.com/cjfal2/SIMPLAN_next/blob/master/pictures/simplan_logo.png)
 
-First, run the development server:
+## 🎞 소개 영상 보기 : none
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📆 프로젝트 진행 기간
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**2024.01.15(월) ~ 2024/02/26(금)**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🐉 토이 프로젝트 - SIMPLAN
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📖 SIMPLAN은 무엇인가요?
 
-## Learn More
+**시간 분배를 확인할 수 있는 일정관리 어플리케이션**
 
-To learn more about Next.js, take a look at the following resources:
+## 💜 주요 기능
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔎 오늘의 일정 설정
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 주요 기술
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Frontend   | Backend - Spring            | CI/CD          |
+| ---------- | --------------------------- | -------------- |
+| Nextjs 14  | Spring Boot                 | AWS EC2        |
+| Tailwind   | JPA                         | Jenkins        |
+| TypeScript |                             | Docker         |
+| Vercel     |                             |                |
+
+
+## 🖥️ SIMPLAN 서비스 화면 
+### 0. 회원 가입
+
+### 1. 로그인 화면 
+
+### 2. Today 
+
+##### 2-1. Today 페이지
+
+##### 2-1. Today 페이지 일정 추가
+
+##### 2-1. Today 페이지
+
+### 3. Week
+
+### 4. Month
+
+##### 4-1. Month 페이지 - 오늘
+
+##### 4-2. Month 페이지 - 다른 날
+
+### 5. 통계
+
+##### 5-1. Week
+
+##### 5-2. Month
+
+
+## ✔ 협업 환경
+
+### Notion
+
+- 브레인스토밍, 기능 구현, 링크 공유 등 팀원과 함께 작성해야 할 문서가 있을때 Notion을 활용했어요
+- 컨벤션, 오늘의 목표, 마일스톤, 팀 규칙 등 팀원과 공유할 정보가 있을 때 Notion에 적극적으로 기록하여 관리했어요
+
+### Git
+
+- 
+
+### Discord
+
+- 
+
+## 👩 팀원 역할 분배
+
+
