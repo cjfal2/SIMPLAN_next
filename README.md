@@ -1,6 +1,5 @@
-# 🗓️ SIMPLAN
-<img src="/pictures/simplan_logo.png" width="200" height="200"/>
-![image](/pictures/simplan_logo.png)
+# <img src="/pictures/simplan_logo.png" width="50" height="50"/> SIMPLAN
+<img src="/pictures/siimplan_name.png"/>
 
 ## 🎞 소개 영상 보기 : none
 
