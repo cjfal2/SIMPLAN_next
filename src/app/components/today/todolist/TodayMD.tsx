@@ -1,3 +1,5 @@
+"use client"
+
 import { getTodayDate } from "@/app/apis/getTodayDate";
 import React from "react";
 const daysOfWeek: string[] = ["일", "월", "화", "수", "목", "금", "토"];
