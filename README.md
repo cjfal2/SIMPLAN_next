@@ -1,7 +1,6 @@
 # <img src="/pictures/simplan_logo.png" width="50" height="50"/> SIMPLAN
 <img src="/pictures/siimplan_name.png"/>
 
-## 🎞 소개 영상 보기 : none
 
 ## 📆 프로젝트 진행 기간
 
@@ -29,34 +28,6 @@
 | Vercel     |                             |                |
 
 
-## 🖥️ SIMPLAN 서비스 화면 
-### 0. 회원 가입
-
-### 1. 로그인 화면 
-
-### 2. Today 
-
-##### 2-1. Today 페이지
-
-##### 2-1. Today 페이지 일정 추가
-
-##### 2-1. Today 페이지
-
-### 3. Week
-
-### 4. Month
-
-##### 4-1. Month 페이지 - 오늘
-
-##### 4-2. Month 페이지 - 다른 날
-
-### 5. 통계
-
-##### 5-1. Week
-
-##### 5-2. Month
-
-
 ## ✔ 협업 환경
 
 ### Notion
@@ -66,12 +37,9 @@
 
 ### Git
 
-- 
-
 ### Discord
 
-- 
-
 ## 👩 팀원 역할 분배
-
+김동준 - Frontend
+김준형 - Backend
 
